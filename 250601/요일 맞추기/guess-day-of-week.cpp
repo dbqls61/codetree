@@ -25,8 +25,10 @@ int main() {
 
     int base = getDayCount(m1, d1);
     int target = getDayCount(m2, d2);
+    int diff = (target - base) % 7;
 
-    int diff = (target - base + 7) % 7;
+    // 음수 방지
+    if (diff < 0) diff += 7;
 
     cout << dayNames[diff] << endl;
 
